@@ -59,11 +59,10 @@ button{
 .one-todo span{
     margin-right: 20px;
 }
-.point-td{
+.point-td, .date-td, .delete{
     float: right;
 }
-.date-td{
-    float: right;
+.delete{
+    cursor: pointer;
 }
-
 
