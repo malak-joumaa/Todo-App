@@ -36,6 +36,11 @@ button{
     height: 30px;
 }
 
+.save-btn{
+    visibility: hidden;
+    margin-top: 25px;
+}
+
 .display-todos{
     width: 60%;
     min-height: 350px;

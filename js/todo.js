@@ -1,5 +1,6 @@
 // Add todo div elements
 var btn_add = $(".add");
+var btn_save =$(".save-btn");
 //Single todo elements
 var single_todo = $(".one-todo");
 var isDone = $(".check").is(':checked');
@@ -50,7 +51,40 @@ $('ul').on('click', '.fa-trash-can',function(){
 
 //Update li
 $('ul').on('click', '.fa-pen',function(){
+    var li =this.id
     $("#title").val(""+data[this.id][2]);
     $("#desc").val(""+data[this.id][3]);
     $("#point").val(""+data[this.id][4]);
-})
+    btn_add.css("visibility","hidden");
+    btn_save.css("visibility","visible");
+
+    // On Save
+    btn_save.click({param: li}, update)
+    function update(event){
+    event.data.param
+
+    $("#"+data[event.data.param][1]).remove();
+    // Data of current li
+    data[event.data.param][2] = $("#title").val()
+    data[event.data.param][3] = $("#desc").val()
+    data[event.data.param][4] = $("#point").val();
+    //Append new li
+    $('ul').append('<li class="one-todo" id="'+data[event.data.param][1]+'">'
+    +'<span class="title-td">'+data[event.data.param][2]+'</span>'
+    +'<br> <br> <div> <input type="radio" class="check-td">'
+    +'<span class="desc-td">'+data[event.data.param][3]+'</span>'
+    +'<span class="delete"><i class="fa-solid fa-trash-can" data="'+data[event.data.param][1]+'"></i></span>'
+    +'<span class="delete"><i class="fa-solid fa-pen" id="'+event.data.param+'"></i></span>'
+    // +'<span class="date-td">'+createdAt+'</span>'
+    +'<span class="point-td">'+data[event.data.param][4]+'</span>'
+    +'</li>');
+    $("#title").val("");
+    $("#desc").val("");
+    $("#point").val("");
+    console.log(data)
+    btn_add.css("visibility","visible");
+    btn_save.css("visibility","hidden");
+    }
+});
+
+
