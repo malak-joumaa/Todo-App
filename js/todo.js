@@ -77,8 +77,14 @@ btn_add.click(function(){
 $('ul').on('click', '.fa-trash-can',function(){
     console.log($("#"+$(this).attr('data')).val());
     data.splice($("#"+$(this).attr('data')),1)
+    newlilcl.splice($("#"+$(this).attr('data')),1)
     $("#"+$(this).attr('data')).remove();
     console.log(data)
+    localStorage.setItem('data',JSON.stringify(data));
+    current_li--;
+    localStorage.setItem("count", current_li);
+    localStorage.setItem("lis", JSON.stringify(newlilcl));
+
 });
 
 //Update li
