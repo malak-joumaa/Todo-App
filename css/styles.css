@@ -5,8 +5,8 @@
 }
 
 body{
-    background-color: #f8f8f8;
     font-family: "GT Eesti", Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
 }
 
 #add-todo-div, #Todos{
@@ -15,12 +15,16 @@ body{
     margin: 0 auto;
     text-align: center;
     margin-bottom: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(130, 128, 221, 0.9) 0px 5px 15px;
     border-radius: 20px;
 }
 
 #add-todo-div{
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 70px;
 }
 
 .add{
@@ -43,19 +47,19 @@ button{
 
 .display-todos{
     width: 60%;
-    min-height: 350px;
+    min-height: 150px;
     margin: 0 auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(130, 128, 221, 0.9) 0px 5px 15px;
     border-radius: 20px;
     margin-bottom: 20px;
-    padding-top: 30px;
+    padding-top: 5px;
 }
 
 .one-todo{
     width: 90%;
-    min-height: 55px;
+    min-height: 40px;
     margin: 0 auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
     margin-top: 30px;
     border-radius: 20px;
     padding: 15px;
@@ -71,3 +75,47 @@ button{
     cursor: pointer;
 }
 
+textarea{
+    width: 75%;
+    float: right;
+    margin-bottom: 20px;
+    height: 30px;
+    resize: none;
+    border: 3px solid #b8b7f2;
+    border-radius: 5px;
+}
+label{
+    margin-right: 2px;
+}
+
+.title-td{
+    color: #fab5ce;
+}
+
+input{
+    width: 25.8%;
+    height: 30px;
+    border: 3px solid #b8b7f2;
+    border-radius: 5px;
+}
+  
+input[type="checkbox"]{
+    width: 20px !important;
+    height: 20px;
+ }
+
+
+button{
+    background-color: #b8b7f2;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    height: 40px;
+    width: 100px;
+    font-size: 1em;
+    float: left;
+}
+.fa-solid{
+    font-size: 1.2em;
+    color:#fab5ce;
+}

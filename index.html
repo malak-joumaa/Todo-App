@@ -17,21 +17,26 @@
     <section>
         <!-- Add Todo Start -->
         <div id="add-todo-div">
+            <div>
             <label>Title</label>
             <Textarea id="title"></Textarea>
+            </div><div>
             <label >Description</label>
             <Textarea id="desc" ></Textarea>
+            </div>
+            <div>
             <label>Priority</label>
             <input type="text" id="point">
             <label>Search:</label>
             <input type="text" id="search">
             <button class="add add-btn">Add</button>
             <button class="save-btn">Save</button>
+            </div>
         </div>
         <!-- Add Todo End -->
         <!-- Display todos -->
-        <ul class="display-todos">
-            <li class="one-todo">
+        <ul class="display-todos" type="none">
+            <!-- <li class="one-todo">
                 <span class="title-td">Title</span>
                 <br>
                 <br>
@@ -42,7 +47,7 @@
                 <span class="date-td">02/06/2022</span>
                 <span class="point-td">2</span>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </section>
     <script src="/js/todo.js"></script>

@@ -136,5 +136,10 @@ $("#search").on("keyup", function() {
 
 //Todo Done
 $('ul').on('click', '.check-td',function(){ 
-    ($(this).parent()).parent().css('background-color','gray');
+    if(this.checked){
+        ($(this).parent()).parent().css('background-color','#838383');
+    }
+    else{
+    ($(this).parent()).parent().css('background-color','#white');
+    }
  });
