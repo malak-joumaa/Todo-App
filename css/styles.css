@@ -36,22 +36,34 @@ button{
     height: 30px;
 }
 
-.todos{
+.display-todos{
     width: 60%;
     min-height: 350px;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
     margin-bottom: 20px;
-    text-align: center;
     padding-top: 30px;
 }
 
 .one-todo{
     width: 90%;
-    height: 55px;
+    min-height: 55px;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-top: 30px;
     border-radius: 20px;
+    padding: 15px;
+    position: relative;
 }
+.one-todo span{
+    margin-right: 20px;
+}
+.point-td{
+    float: right;
+}
+.date-td{
+    float: right;
+}
+
+

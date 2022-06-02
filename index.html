@@ -11,22 +11,31 @@
     <section>
         <!-- Add Todo Start -->
         <div id="add-todo-div">
-            <label class="add">Title</label>
-            <Textarea id="title" class="add"></Textarea>
-            <label class="add">Description</label>
-            <Textarea id="desc" class="add"></Textarea>
-            <label class="add">Priority</label>
-            <input type="text" id="point" class="add">
-            <button class="add">Add</button>
+            <label>Title</label>
+            <Textarea id="title"></Textarea>
+            <label >Description</label>
+            <Textarea id="desc" ></Textarea>
+            <labelPriority</label>
+            <input type="text" id="point">
+            <button class="add add-btn">Add</button>
         </div>
         <!-- Add Todo End -->
         <!-- Display todos -->
-        <div class="todos">
-            <div class="one-todo"></div>
-            <div class="one-todo"></div>
-            <div class="one-todo"></div>
-        </div>
+        <ul class="display-todos">
+            <li class="one-todo">
+                <span class="title-td">Title</span>
+                <br>
+                <br>
+                <div>
+                <input type="radio" class="check-td">
+                <span class="desc-td">Descriptionvf vfijnvifnevbirvbje</span>
+                <span class="date-td">02/06/2022</span>
+                <span class="point-td">2</span>
+                </div>
+            </li>
+        </ul>
     </section>
-    <script src="todo.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/todo.js"></script>
 </body>
 </html>
