@@ -8,6 +8,7 @@ var desc_td = $(".desc-td");
 var date_td = $(".date-td");
 var point_td = $(".point-td");
 var delete_li = $(".delete");
+var radio = $(".check-td")
 var current_li = parseInt(localStorage.getItem('count'));
 console.log(current_li+3)
 var id = 0;
@@ -125,3 +126,14 @@ $('ul').on('click', '.fa-pen',function(){
     }
 });
 
+//Search
+$("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("ul li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+
+$('#element').click(function() {
+    if($('#radio_button').is(':checked')) { alert("it's checked"); }
+ });
