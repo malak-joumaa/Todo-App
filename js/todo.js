@@ -139,7 +139,7 @@ $('ul').on('click', '.check-td',function(){
     if(this.checked){
         ($(this).parent()).parent().css('background-color','#838383');
     }
-    else{
-    ($(this).parent()).parent().css('background-color','#white');
+    if(!this.checked){
+    ($(this).parent()).parent().css('background-color','white');
     }
  });
