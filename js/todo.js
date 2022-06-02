@@ -7,10 +7,36 @@ var isDone = $(".check").is(':checked');
 var desc_td = $(".desc-td");
 var date_td = $(".date-td");
 var point_td = $(".point-td");
-var delete_li = $(".delete")
-var data = [];
-var current_li = 0;
+var delete_li = $(".delete");
+var current_li = parseInt(localStorage.getItem('count'));
+console.log(current_li+3)
 var id = 0;
+var all_li=[];
+var isEmpty = JSON.parse(localStorage.getItem('lis'));
+console.log(isEmpty)
+if(isEmpty==null){
+    var newlilcl=[];
+    var newli=[];
+    var data=[];
+    var current_li = 0
+    localStorage.setItem('lis',JSON.stringify(newli))
+    localStorage.setItem("count", current_li)
+    localStorage.setItem('data',JSON.stringify(data));
+    console.log('here')
+}
+else{
+    var newlilcl=[]
+    var newli=[]
+    var data=[]
+    var dat= JSON.parse(localStorage.getItem('data'));
+    for(let i=0; i<isEmpty.length; i++){
+        newli.push(isEmpty[i])
+        newlilcl.push(isEmpty[i])
+        $('ul').append(isEmpty[i]);
+        data.push(dat[i])
+    }
+}
+console.log(newlilcl)
 btn_add.click(function(){
     // Get Date
     var createdAt = new Date;
@@ -22,10 +48,9 @@ btn_add.click(function(){
     console.log(id);
 
     // Data of current li
-    var current_li_data = [createdAt,id,$("#title").val(),$("#desc").val(),$("#point").val(),current_li]
+    var current_li_data = ["0",id,$("#title").val(),$("#desc").val(),$("#point").val(),current_li]
     data.push(current_li_data);
-    // Append new li
-    $('ul').append('<li class="one-todo" id="'+data[current_li][1]+'">'
+    newlilcl.push( '<li class="one-todo" id="'+data[current_li][1]+'">'
     +'<span class="title-td">'+data[current_li][2]+'</span>'
     +'<br> <br> <div> <input type="radio" class="check-td">'
     +'<span class="desc-td">'+data[current_li][3]+'</span>'
@@ -33,12 +58,19 @@ btn_add.click(function(){
     +'<span class="delete"><i class="fa-solid fa-pen" id="'+current_li+'"></i></span>'
     // +'<span class="date-td">'+createdAt+'</span>'
     +'<span class="point-td">'+data[current_li][4]+'</span>'
-    +'</li>');
+    +'</li>')
+    // Append new li
+    $('ul').append(newlilcl[current_li]);
     $("#title").val("");
     $("#desc").val("");
     $("#point").val("");
     current_li++;
     console.log(data)
+    all_li.push(newli);
+    newli = newlilcl
+    localStorage.setItem("lis", JSON.stringify(newli));
+    localStorage.setItem("count", current_li);
+    localStorage.setItem('data',JSON.stringify(data));
 });
 
 //Delete li
@@ -86,5 +118,4 @@ $('ul').on('click', '.fa-pen',function(){
     btn_save.css("visibility","hidden");
     }
 });
-
 
