@@ -53,7 +53,7 @@ btn_add.click(function(){
     data.push(current_li_data);
     newlilcl.push( '<li class="one-todo" id="'+data[current_li][1]+'">'
     +'<span class="title-td">'+data[current_li][2]+'</span>'
-    +'<br> <br> <div> <input type="radio" class="check-td">'
+    +'<br> <br> <div> <input type="checkbox" id="'+current_li+'" class="check-td">'
     +'<span class="desc-td">'+data[current_li][3]+'</span>'
     +'<span class="delete"><i class="fa-solid fa-trash-can" data="'+data[current_li][1]+'"></i></span>'
     +'<span class="delete"><i class="fa-solid fa-pen" id="'+current_li+'"></i></span>'
@@ -110,7 +110,7 @@ $('ul').on('click', '.fa-pen',function(){
     //Append new li
     $('ul').append('<li class="one-todo" id="'+data[event.data.param][1]+'">'
     +'<span class="title-td">'+data[event.data.param][2]+'</span>'
-    +'<br> <br> <div> <input type="radio" class="check-td">'
+    +'<br> <br> <div> <input type="checkbox" class="check-td">'
     +'<span class="desc-td">'+data[event.data.param][3]+'</span>'
     +'<span class="delete"><i class="fa-solid fa-trash-can" data="'+data[event.data.param][1]+'"></i></span>'
     +'<span class="delete"><i class="fa-solid fa-pen" id="'+event.data.param+'"></i></span>'
@@ -134,6 +134,7 @@ $("#search").on("keyup", function() {
     });
   });
 
-$('#element').click(function() {
-    if($('#radio_button').is(':checked')) { alert("it's checked"); }
+//Todo Done
+$('ul').on('click', '.check-td',function(){ 
+    ($(this).parent()).parent().css('background-color','gray');
  });
